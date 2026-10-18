@@ -1,0 +1,454 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#b51f4d">
+<title>Maysa Gourmet | Bolos de Pote</title>
+<style>
+:root{--pink:#bd2854;--pink2:#e74f78;--pale:#fff0f1;--cream:#fffaf5;--brown:#542719;--ink:#342421;--muted:#75615c;--line:#f2d8d9;--green:#18864b}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--cream);color:var(--ink);font-family:Inter,system-ui,-apple-system,"Segoe UI",sans-serif}
+header{position:sticky;top:0;z-index:5;background:#fffaf5ed;backdrop-filter:blur(12px);border-bottom:1px solid #f4dfe0}
+.nav{max-width:1180px;margin:auto;padding:14px 22px;display:flex;align-items:center;justify-content:space-between;gap:18px}
+.brand{display:flex;align-items:center;gap:10px;color:var(--brown);text-decoration:none}.brand-icon{font-size:34px}.brand strong{font-family:Georgia,serif;font-style:italic;font-size:28px;display:block;line-height:1}.brand small{color:var(--pink);font-weight:650;letter-spacing:.3px}
+nav{display:flex;gap:25px}nav a{color:var(--ink);text-decoration:none;font-size:14px;font-weight:650}nav a:hover{color:var(--pink)}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:9px;border:0;border-radius:999px;padding:13px 20px;background:var(--pink);color:white;text-decoration:none;font-weight:750;cursor:pointer;box-shadow:0 7px 18px #bd285426;transition:.18s}.btn:hover{background:#9e1c42;transform:translateY(-1px)}.btn:focus-visible,button:focus-visible,input:focus-visible{outline:3px solid #f6a8bd;outline-offset:3px}
+.hero{background:linear-gradient(110deg,#ffe9e9 0%,#fff4ed 53%,#f6c6bc 100%);overflow:hidden}
+.hero-inner{max-width:1180px;margin:auto;min-height:360px;padding:48px 24px;display:grid;grid-template-columns:1fr 1fr;align-items:center;gap:28px}
+.eyebrow{text-transform:uppercase;letter-spacing:3px;color:#7e3037;font-size:12px;font-weight:800}.hero h1{font-family:Georgia,serif;font-size:clamp(42px,5.2vw,66px);line-height:.99;color:var(--brown);margin:14px 0}.hero h1 em{color:var(--pink);font-weight:700}.hero p{font-size:17px;line-height:1.6;max-width:440px;margin:16px 0 24px}.price-pill{display:inline-block;background:linear-gradient(100deg,var(--pink),#d63865);color:white;border-radius:999px;padding:12px 25px;font-size:22px;font-weight:850;box-shadow:0 8px 20px #b51f4d26}
+.hero-art{min-height:280px;position:relative;display:flex;align-items:center;justify-content:center}
+.dessert-scene{position:relative;width:min(100%,470px);height:300px;border-radius:48% 52% 35% 40%;background:radial-gradient(ellipse at 50% 75%,#a65a32 0%,#7b351f 22%,#dba06f 23%,#f5cba4 42%,transparent 43%),linear-gradient(145deg,#f5c8bb,#ffe7db);display:flex;align-items:center;justify-content:center;overflow:hidden}
+.dessert-scene:before{content:"";position:absolute;inset:auto -5% -15% -5%;height:38%;background:#b8794d;border-radius:50%;box-shadow:0 -5px 0 #d99c69}
+.cup{position:relative;z-index:1;width:210px;height:230px;border:5px solid #ffffffb8;border-top:7px solid #fffdf0;border-radius:28px 28px 42px 42px;transform:perspective(500px) rotate(-3deg);background:linear-gradient(to bottom,#512317 0 13%,#7b341f 13% 28%,#3b1c17 28% 42%,#a55b37 42% 57%,#4a2118 57% 72%,#7d351e 72% 87%,#3d1b16 87%);box-shadow:0 16px 28px #6e2a2450,inset 10px 0 15px #ffffff3d,inset -10px 0 12px #2d100a4f}
+.cup:before{content:"";position:absolute;top:-13px;left:-9px;right:-9px;height:27px;background:#ffffffc9;border:5px solid #fff;border-radius:50%;box-shadow:inset 0 0 0 4px #f7d8ca}
+.sprinkles{position:absolute;z-index:2;top:26px;left:22px;right:22px;height:46px;border-radius:50%;background:radial-gradient(ellipse,#6b2818 0 3px,transparent 4px),radial-gradient(ellipse,#a84b25 0 3px,transparent 4px);background-size:17px 13px,13px 15px;background-position:0 0,5px 6px}
+.strawberry{position:absolute;z-index:3;font-size:58px;filter:drop-shadow(0 7px 4px #6c271c30)}.strawberry.one{left:7%;bottom:26px;transform:rotate(-25deg)}.strawberry.two{right:5%;top:24px;transform:rotate(18deg);font-size:48px}
+.scene-note{position:absolute;right:0;bottom:15px;background:#fff8f2e8;color:var(--pink);padding:11px 15px;border-radius:18px;font-family:Georgia,serif;font-style:italic;font-weight:700;transform:rotate(5deg)}
+.benefits{background:#fff7f4;border-top:1px solid #fff;border-bottom:1px solid #f9e8e6}.benefit-row{max-width:1180px;margin:auto;padding:18px 24px;display:grid;grid-template-columns:repeat(3,1fr);gap:16px}.benefit{display:flex;align-items:center;justify-content:center;gap:12px;font-size:13px;line-height:1.4}.benefit-icon{width:46px;height:46px;border-radius:50%;background:#fbe0e4;display:grid;place-items:center;font-size:23px;flex-shrink:0}
+main{max-width:1180px;margin:auto;padding:48px 22px 34px}.section-heading{text-align:center;margin-bottom:28px}.section-heading h2{font-family:Georgia,serif;font-style:italic;color:var(--brown);font-size:clamp(32px,4vw,44px);margin:0 0 7px}.section-heading p{margin:0;color:var(--muted)}
+.products{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:15px}
+.product{background:linear-gradient(145deg,#fff0ef,#fff8f3);border:1px solid #fae7e5;border-radius:17px;padding:15px;display:flex;flex-direction:column;min-width:0;transition:transform .2s,box-shadow .2s}.product:hover{transform:translateY(-3px);box-shadow:0 10px 25px #8d3c2c10}
+.product-image{height:130px;border-radius:12px;margin-bottom:12px;display:grid;place-items:center;overflow:hidden;background:radial-gradient(circle at 50% 35%,#fff8e9,#f3d1c5)}
+.food-cup{width:82px;height:98px;position:relative;border:3px solid #ffffffc9;border-radius:9px 9px 17px 17px;box-shadow:0 9px 12px #69322125;background:linear-gradient(to bottom,var(--top,#6c2b19) 0 20%,var(--layer,#e6b99a) 20% 36%,var(--middle,#512217) 36% 55%,var(--layer,#e6b99a) 55% 72%,var(--top,#6c2b19) 72%);transform:perspective(200px) rotate(-3deg)}
+.food-cup:before{content:"";position:absolute;top:-7px;left:-5px;right:-5px;height:15px;border-radius:50%;border:3px solid white;background:var(--top,#6c2b19)}
+.food-cup:after{content:"";position:absolute;left:8px;right:8px;top:2px;height:13px;border-radius:50%;background:radial-gradient(circle,#d8a15b 0 2px,transparent 3px);background-size:10px 8px}
+.product h3{font-family:Georgia,serif;color:var(--brown);font-size:17px;line-height:1.2;margin:0 0 7px}.product p{font-size:12px;color:#6e5c57;line-height:1.45;margin:0 0 12px;flex:1}.product-bottom{display:flex;align-items:center;justify-content:space-between;gap:8px;margin-top:auto}.unit-price{font-weight:850;color:var(--pink);font-size:15px;white-space:nowrap}.quantity{display:flex;align-items:center;gap:9px;background:white;border:1px solid #f1d5d9;border-radius:999px;padding:4px}.quantity button{width:29px;height:29px;border:0;border-radius:50%;background:#fbe4e8;color:#9d2148;font-size:20px;line-height:1;cursor:pointer;font-weight:750}.quantity button:hover{background:#f5c4d0}.quantity output{min-width:14px;text-align:center;font-weight:800;font-size:14px}
+.order-box{margin:32px 0 0;background:linear-gradient(110deg,#9f2047,#c62958);border-radius:22px;color:white;padding:24px;display:grid;grid-template-columns:1fr auto;gap:20px;align-items:center;box-shadow:0 12px 28px #a51f4c1c}.order-box h2{font-family:Georgia,serif;font-size:28px;font-style:italic;margin:0 0 6px}.order-box p{margin:0;color:#ffe7ed;font-size:14px}.order-total{text-align:right}.order-total .amount{display:block;font-size:30px;font-weight:900;margin:3px 0 10px}.order-total .btn{background:white;color:var(--pink);box-shadow:none}.order-total .btn:hover{background:#fff0f3}
+.name-field{margin-top:18px;display:flex;gap:10px;align-items:center;max-width:430px}.name-field label{font-size:13px;font-weight:700;white-space:nowrap}.name-field input{width:100%;min-width:0;border:1px solid #edcbd1;background:#fffaf8;border-radius:10px;padding:11px 12px;font:inherit}
+footer{background:#fff2f0;border-top:1px solid #f5dddd;padding:22px;text-align:center;color:#7b4a43;font-size:13px}footer strong{font-family:Georgia,serif;font-size:20px;color:var(--brown);font-style:italic}
+.toast{position:fixed;bottom:18px;left:50%;transform:translateX(-50%);background:#2c2422;color:white;border-radius:12px;padding:12px 16px;font-size:13px;box-shadow:0 8px 24px #0002;display:none;z-index:10}
+
+/* Maysa Gourmet v1.0 */
+.extra-section{margin:42px 0}
+.extra-section .section-heading{margin-bottom:22px}
+.gallery-grid,.reviews-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px}
+.gallery-card,.review-card,.panel-card{background:#fff;border:1px solid var(--line);border-radius:16px;padding:16px}
+.gallery-card img{width:100%;height:190px;object-fit:cover;border-radius:11px;display:block}
+.gallery-card h3,.review-card h3{margin:10px 0 5px;color:var(--brown)}
+.review-stars{color:#d18a00;letter-spacing:2px;font-size:19px}
+.review-form,.admin-form{max-width:650px;margin:0 auto;background:#fff;border:1px solid var(--line);border-radius:18px;padding:20px}
+.field{display:grid;gap:6px;margin:12px 0}
+.field label{font-weight:700;font-size:13px}
+.field input,.field textarea,.field select{width:100%;border:1px solid #e7cbd0;border-radius:10px;padding:11px 12px;font:inherit;background:#fffdfb}
+.field textarea{min-height:95px;resize:vertical}
+.small-note{font-size:12px;color:var(--muted);line-height:1.5}
+.admin-wrap{margin:40px auto;max-width:1180px;padding:0 22px}
+.admin-panel{display:none;background:#fff7f6;border:1px solid var(--line);border-radius:20px;padding:22px;margin-top:18px}
+.admin-panel.active{display:block}
+.admin-tabs{display:flex;gap:8px;flex-wrap:wrap;margin:16px 0}
+.admin-tabs button{border:1px solid #e8c6cc;background:#fff;color:var(--pink);padding:10px 14px;border-radius:999px;cursor:pointer;font-weight:700}
+.admin-tabs button.active{background:var(--pink);color:#fff}
+.admin-tab{display:none}.admin-tab.active{display:block}
+.stat-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;margin:16px 0}
+.stat{background:white;border:1px solid var(--line);border-radius:14px;padding:16px}
+.stat span{display:block;color:var(--muted);font-size:13px}.stat strong{display:block;font-size:25px;color:var(--pink);margin-top:6px}
+.month-nav{display:flex;gap:10px;align-items:center;flex-wrap:wrap;margin:12px 0}
+.table-wrap{overflow-x:auto}table{width:100%;border-collapse:collapse;background:#fff;border-radius:12px;overflow:hidden}th,td{padding:11px;text-align:left;border-bottom:1px solid #f2e1e1;font-size:13px}th{background:#fff0f1;color:var(--brown)}
+.item-actions{display:flex;gap:7px;flex-wrap:wrap;margin-top:10px}
+.item-actions button,.danger-btn{border:0;border-radius:9px;padding:8px 11px;cursor:pointer;font-weight:700;background:#fbe4e8;color:#8e1c40}
+.item-actions .approve{background:#e1f5e7;color:#176b39}
+.notice{padding:12px 14px;background:#fff0f1;border-radius:11px;font-size:13px;line-height:1.5;margin:12px 0}
+.error-msg{color:#a11b2f;font-weight:700;min-height:20px;font-size:13px}
+@media(max-width:700px){.gallery-grid,.reviews-grid{grid-template-columns:1fr 1fr}.stat-grid{grid-template-columns:1fr 1fr}.admin-wrap{padding:0 14px}.admin-panel{padding:14px}}
+@media(max-width:430px){.gallery-grid,.reviews-grid,.stat-grid{grid-template-columns:1fr}.gallery-card img{height:220px}}
+
+@media(max-width:900px){.products{grid-template-columns:repeat(2,minmax(0,1fr))}.hero-inner{min-height:320px}.benefit-row{grid-template-columns:repeat(3,1fr)}nav{gap:13px}}
+@media(max-width:640px){.nav{padding:12px 16px}.brand strong{font-size:24px}.brand-icon{font-size:29px}nav{display:none}.nav>.btn{padding:10px 13px;font-size:12px}.hero-inner{grid-template-columns:1fr;padding:34px 20px 22px;gap:5px}.hero h1{font-size:48px}.hero p{font-size:15px}.hero-art{min-height:245px}.dessert-scene{height:240px}.cup{transform:scale(.84);}.strawberry.one{bottom:12px}.benefit-row{grid-template-columns:1fr;padding:13px 22px;gap:10px}.benefit{justify-content:flex-start}.benefit-icon{width:38px;height:38px;font-size:19px}.benefit:nth-child(3){display:none}main{padding:36px 14px 26px}.products{gap:10px}.product{padding:10px;border-radius:14px}.product-image{height:105px}.food-cup{transform:scale(.83)}.product h3{font-size:15px}.product p{font-size:11px}.product-bottom{align-items:flex-start;flex-direction:column}.unit-price{font-size:14px}.quantity{align-self:flex-start}.order-box{grid-template-columns:1fr;padding:20px;gap:15px}.order-box h2{font-size:25px}.order-total{text-align:left}.order-total .amount{font-size:28px}.name-field{flex-direction:column;align-items:stretch}.name-field label{white-space:normal}}
+@media(max-width:370px){.products{grid-template-columns:1fr}.product{display:grid;grid-template-columns:90px 1fr;column-gap:12px}.product-image{grid-row:span 3;height:100px;margin:0}.product h3{align-self:end}.product p{margin-bottom:8px}.product-bottom{grid-column:2;flex-direction:row;align-items:center}}
+
+/* Tela inicial com escolha de área e controles de acesso */
+.entry-screen{max-width:1050px;margin:0 auto;padding:44px 22px 58px;min-height:calc(100vh - 90px)}
+.entry-title{text-align:center;margin:12px 0 30px}
+.entry-title h1{font-family:Georgia,serif;font-style:italic;font-size:clamp(34px,5vw,52px);color:var(--brown);margin:0 0 10px}
+.entry-title p{color:var(--muted);margin:0}
+.entry-choices{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:22px}
+.entry-choice{border:1px solid var(--line);border-radius:24px;padding:28px;background:#fff;box-shadow:0 14px 38px #5427190d;display:flex;flex-direction:column;align-items:center;text-align:center;min-height:265px}
+.entry-choice .choice-icon{width:78px;height:78px;border-radius:24px;display:grid;place-items:center;background:#fff0f1;font-size:38px;margin-bottom:14px}
+.entry-choice h2{font-family:Georgia,serif;color:var(--brown);font-size:29px;margin:0 0 9px}
+.entry-choice p{color:var(--muted);line-height:1.55;max-width:340px;flex:1}
+.entry-choice .btn{min-width:210px}
+.entry-choice.owner{background:linear-gradient(145deg,#fff,#fff5f1)}
+.top-settings{margin-left:auto;position:relative}
+.settings-trigger{border:1px solid var(--line);background:#fff;border-radius:50%;width:42px;height:42px;display:grid;place-items:center;color:var(--brown);font-size:21px;cursor:pointer}
+.settings-popover{display:none;position:absolute;right:0;top:50px;width:250px;padding:14px;background:white;border:1px solid var(--line);border-radius:15px;box-shadow:0 12px 32px #54271920;z-index:20}
+.settings-popover.open{display:block}
+.settings-popover strong{display:block;color:var(--brown);margin:2px 0 8px}
+.settings-popover button{width:100%;text-align:left;background:#fff7f5;border:0;border-radius:9px;padding:10px;margin-top:6px;color:var(--ink);font-weight:650;cursor:pointer}
+.password-wrap{display:flex;gap:8px}
+.password-wrap input{flex:1;min-width:0}
+.toggle-password{border:1px solid #e7cbd0;background:#fff;border-radius:10px;padding:0 13px;cursor:pointer}
+.entry-hidden{display:none!important}
+#clientArea,#ownerArea{scroll-margin-top:90px}
+.area-back{display:inline-flex;margin:20px 0 0;color:var(--pink);font-weight:750;background:none;border:0;cursor:pointer}
+@media(max-width:650px){.entry-choices{grid-template-columns:1fr}.entry-choice{min-height:230px;padding:23px}.nav{gap:10px}.nav nav{display:none}.brand strong{font-size:24px}}
+
+</style>
+</head>
+<body>
+<header>
+  <div class="nav">
+    <a class="brand" href="#inicio" aria-label="Maysa Gourmet, início"><span class="brand-icon">🧁</span><span><strong>Maysa</strong><small>♥ Gourmet ♥</small></span></a>
+    <nav aria-label="Navegação principal"><a href="#inicio">Início</a><a href="#sabores">Sabores</a><a href="#galeria">Fotos</a><a href="#avaliacoes">Avaliações</a><a href="#pedido">Seu pedido</a></nav>
+    <div class="top-settings" id="topSettings">
+      <button class="settings-trigger" id="settingsTrigger" type="button" aria-label="Abrir configurações" title="Configurações">⚙</button>
+      <div class="settings-popover" id="settingsPopover"><strong>Configurações da proprietária</strong><button type="button" id="goOwnerSettings">Abrir configurações administrativas</button></div>
+    </div>
+    <a class="btn" href="#pedido" id="headerOrderButton">☏ Fazer pedido</a>
+  </div>
+</header>
+
+<section class="entry-screen" id="entryScreen">
+  <div class="entry-title"><div class="eyebrow">Bem-vindo(a) à Maysa Gourmet</div><h1>Como deseja entrar?</h1><p>Escolha uma área para continuar.</p></div>
+  <div class="entry-choices">
+    <article class="entry-choice">
+      <div class="choice-icon">🧁</div><h2>Área do Cliente</h2>
+      <p>Digite seu nome para acessar os sabores, fazer pedidos e avaliar.</p>
+      <form id="clientEntryForm"><div class="field"><label for="clientEntryName">Seu nome</label><input id="clientEntryName" maxlength="80" required placeholder="Digite apenas seu nome"></div><button class="btn" id="enterClient" type="submit">Entrar</button></form>
+    </article>
+    <article class="entry-choice owner">
+      <div class="choice-icon">🔐</div><h2>Área da Proprietária</h2>
+      <p>Acesse o painel privado para acompanhar pedidos, faturamento, fotos e avaliações.</p>
+      <button class="btn" id="enterOwner" type="button">Entrar como proprietária</button>
+    </article>
+  </div>
+  <p class="small-note" style="text-align:center;margin-top:24px">Maysa Gourmet · Bolos de Pote · Versão 1.0</p>
+</section>
+<div id="clientArea" class="entry-hidden">
+  <div class="client-toolbar"><span id="clientWelcome"></span><button type="button" class="danger-btn" id="clientLogout">Sair</button></div>
+<section class="hero" id="inicio">
+  <div class="hero-inner">
+    <div>
+      <div class="eyebrow">Doce é sempre uma boa ideia!</div>
+      <h1>Bolos de pote<br><em>da Maysa ♡</em></h1>
+      <p>Camadas de muito sabor, feitas com carinho para adoçar o seu dia!</p>
+      <span class="price-pill">Apenas R$ 8,00</span>
+    </div>
+    <div class="hero-art" aria-label="Ilustração de bolo de pote de chocolate">
+      <div class="dessert-scene"><span class="strawberry one">🍓</span><div class="cup"><div class="sprinkles"></div></div><span class="strawberry two">🍓</span></div>
+      <div class="scene-note">Sabor que encanta! ♡</div>
+    </div>
+  </div>
+</section>
+<section class="benefits"><div class="benefit-row">
+  <div class="benefit"><span class="benefit-icon">🧁</span><span><strong>Ingredientes de qualidade</strong><br>Feitos com carinho</span></div>
+  <div class="benefit"><span class="benefit-icon">♡</span><span><strong>Um mimo em cada pote</strong><br>Escolha seus sabores</span></div>
+  <div class="benefit"><span class="benefit-icon">❄</span><span><strong>Mantenha refrigerado</strong><br>Mais gostoso geladinho</span></div>
+</div></section>
+<main>
+  <div class="section-heading" id="sabores"><h2>Nosso Cardápio</h2><p>Escolha seus sabores favoritos — todos por R$ 8,00!</p></div>
+  <div class="products" id="products"></div>
+  <section class="order-box" id="pedido">
+    <div>
+      <h2>Seu pedido, do seu jeitinho! ♡</h2>
+      <p>Escolha as quantidades e envie seu pedido diretamente pelo WhatsApp.</p>
+      <div class="name-field"><label for="customerName">Seu nome (opcional):</label><input id="customerName" type="text" placeholder="Como podemos te chamar?"></div>
+    </div>
+    <div class="order-total">
+      <span id="totalItemsLabel">0 bolos selecionados</span>
+      <span class="amount" id="totalPrice">R$ 0,00</span>
+      <button class="btn" id="whatsappButton" type="button">☏ Realizar pedido pelo WhatsApp</button>
+    </div>
+  </section>
+</main>
+
+<section class="extra-section" id="galeria">
+  <div class="section-heading"><h2>Nosso cantinho de delícias</h2><p>Veja os bolos de pote preparados com carinho pela Maysa.</p></div>
+  <div class="gallery-grid" id="publicGallery">
+    <div class="gallery-card"><div class="product-image" style="height:190px"><div class="food-cup" style="--top:#4b2017;--layer:#a85c38;--middle:#321713;transform:scale(1.35)"></div></div><h3>Chocolate com brigadeiro</h3><p class="small-note">Uma combinação clássica e cremosa.</p></div>
+    <div class="gallery-card"><div class="product-image" style="height:190px"><div class="food-cup" style="--top:#f3e3c7;--layer:#fff6e8;--middle:#6b3925;transform:scale(1.35)"></div></div><h3>Leite Ninho</h3><p class="small-note">Cremoso e feito para adoçar seu dia.</p></div>
+    <div class="gallery-card"><div class="product-image" style="height:190px"><div class="food-cup" style="--top:#fff0e6;--layer:#f5c6bc;--middle:#7b3827;transform:scale(1.35)"></div></div><h3>Ninho com morango</h3><p class="small-note">Doce, delicado e irresistível.</p></div>
+  </div>
+</section>
+<section class="extra-section" id="avaliacoes">
+  <div class="section-heading"><h2>O que nossos clientes dizem</h2><p>Já experimentou? Conte como foi sua experiência.</p></div>
+  <div class="reviews-grid" id="publicReviews"><div class="panel-card"><p class="small-note">As avaliações aprovadas aparecerão aqui. Sua opinião será muito bem-vinda!</p></div></div>
+  <form class="review-form" id="reviewForm"><input id="reviewName" type="hidden">
+    <h3 style="margin-top:0;color:var(--brown)">Deixe sua avaliação</h3>
+    
+    <div class="field"><label for="reviewRating">Sua nota</label><select id="reviewRating" required><option value="5">★★★★★ — Amei!</option><option value="4">★★★★☆ — Muito bom</option><option value="3">★★★☆☆ — Bom</option><option value="2">★★☆☆☆ — Pode melhorar</option><option value="1">★☆☆☆☆ — Não gostei</option></select></div>
+    <div class="field"><label for="reviewComment">Comentário</label><textarea id="reviewComment" maxlength="600" placeholder="Conte um pouquinho da sua experiência... (opcional)"></textarea></div>
+    <button class="btn" type="submit">Enviar avaliação</button>
+    <p class="small-note">As avaliações passam pela aprovação da proprietária antes de serem exibidas. Seu nome e as estrelas selecionadas poderão aparecer na avaliação.</p>
+  </form>
+</section>
+</div>
+<section class="admin-wrap entry-hidden" id="proprietario">
+  <button type="button" class="area-back" id="backFromOwner">← Voltar à tela inicial</button>
+  <div class="section-heading"><h2>Área da proprietária</h2><p>Acesso exclusivo da Maysa Gourmet.</p></div>
+  <form class="admin-form" id="adminLogin">
+    <div class="field"><label for="adminPassword">Senha da proprietária</label><div class="password-wrap"><input id="adminPassword" type="password" autocomplete="current-password" required placeholder="Digite sua senha"><button type="button" class="toggle-password" id="togglePassword" aria-label="Mostrar senha" title="Mostrar ou ocultar senha">👁</button></div></div>
+    <button class="btn" type="submit">Entrar no painel</button>
+    <p id="loginError" class="error-msg" role="alert"></p>
+    <p class="small-note">Acesso demonstrativo desta versão. Antes de publicar na internet, o login precisa ser migrado para autenticação segura no servidor.</p>
+  </form>
+  <div class="admin-panel" id="adminPanel">
+    <div style="display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap"><div><h2 style="margin:0;color:var(--brown)">Painel da Maysa</h2><p class="small-note">Maysa Gourmet · Versão 1.0</p></div><button class="danger-btn" id="logoutButton" type="button">Sair</button></div>
+    <div class="stat-grid"><div class="stat"><span>Pedidos registrados</span><strong id="statOrders">0</strong></div><div class="stat"><span>Bolos vendidos</span><strong id="statCakes">0</strong></div><div class="stat"><span>Faturamento do mês</span><strong id="statRevenue">R$ 0,00</strong></div></div>
+    <div class="admin-tabs">
+      <button type="button" class="active" data-tab="calendarTab">Calendário e pedidos</button><button type="button" data-tab="reviewsTab">Avaliações</button><button type="button" data-tab="photosTab">Fotos dos bolos</button><button type="button" data-tab="settingsTab">Configurações</button>
+    </div>
+    <div class="admin-tab active" id="calendarTab">
+      <h3>Resumo mensal</h3><div class="month-nav"><label for="monthPicker">Selecione o mês:</label><input id="monthPicker" type="month"><button class="btn" id="refreshMonth" type="button">Consultar</button></div>
+      <div class="stat-grid"><div class="stat"><span>Pedidos no mês</span><strong id="monthOrders">0</strong></div><div class="stat"><span>Bolos no mês</span><strong id="monthCakes">0</strong></div><div class="stat"><span>Faturamento no mês</span><strong id="monthRevenue">R$ 0,00</strong></div></div>
+      <div class="table-wrap"><table><thead><tr><th>Data</th><th>Cliente</th><th>Itens</th><th>Total</th></tr></thead><tbody id="ordersTable"><tr><td colspan="4">Nenhum pedido registrado neste mês.</td></tr></tbody></table></div>
+      <p class="small-note">Os pedidos feitos no site são registrados automaticamente quando o cliente clica para enviar o pedido pelo WhatsApp. O registro não confirma pagamento ou conclusão da venda.</p>
+    </div>
+    <div class="admin-tab" id="reviewsTab"><h3>Avaliações pendentes</h3><div id="pendingReviews"></div><h3 style="margin-top:24px">Avaliações publicadas</h3><div id="approvedReviewsAdmin"></div></div>
+    <div class="admin-tab" id="photosTab"><h3>Publicar foto de bolo</h3><form id="photoForm"><div class="field"><label for="photoTitle">Nome do bolo</label><input id="photoTitle" required maxlength="80" placeholder="Ex.: Ninho com morango"></div><div class="field"><label for="photoFile">Escolha a foto</label><input id="photoFile" type="file" accept="image/*" required></div><button class="btn" type="submit">Publicar foto</button></form><p class="small-note">Fotos desta versão ficam salvas neste navegador. Para armazenamento compartilhado entre aparelhos, será necessário conectar um serviço online.</p><div class="gallery-grid" id="adminGallery"></div></div>
+    <div class="admin-tab" id="settingsTab"><h3>Configurações básicas</h3><form id="settingsForm"><div class="field"><label for="settingsPhone">WhatsApp com código do país</label><input id="settingsPhone" required inputmode="numeric" placeholder="5575982801046"></div><button class="btn" type="submit">Salvar telefone</button></form><form id="changePasswordForm" style="margin-top:24px"><h3>Alterar senha</h3><div class="field"><label for="currentPassword">Senha atual</label><input id="currentPassword" type="password" required></div><div class="field"><label for="newPassword">Nova senha</label><input id="newPassword" type="password" minlength="10" required></div><div class="field"><label for="confirmPassword">Confirmar nova senha</label><input id="confirmPassword" type="password" minlength="10" required></div><button class="btn" type="submit">Alterar senha</button><p class="small-note">Use uma senha forte e exclusiva. A senha nunca deve ser compartilhada publicamente.</p></form></div>
+    <div class="notice">Importante: esta é uma versão funcional de demonstração local. Dados e fotos são guardados neste navegador; para um site público com dados compartilhados e autenticação realmente segura, será necessário configurar backend, banco de dados e armazenamento online.</div>
+  </div>
+</section>
+
+<footer><strong>Maysa Gourmet 🍰</strong><br>Feito com carinho para adoçar o seu dia. <span style="display:block;margin-top:6px;font-size:11px">Versão 1.0</span></footer>
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+<script>
+const PRICE = 8;
+const WHATSAPP = "5575982801046";
+const flavors = [
+ {name:"Chocolate com brigadeiro",desc:"Massa de chocolate e recheio cremoso de brigadeiro.",top:"#4b2017",layer:"#a85c38",middle:"#321713"},
+ {name:"Leite Ninho",desc:"Massa branca ou de chocolate com creme de leite em pó.",top:"#f3e3c7",layer:"#fff6e8",middle:"#6b3925"},
+ {name:"Ninho com morango",desc:"Creme de leite em pó com morangos.",top:"#fff0e6",layer:"#f5c6bc",middle:"#7b3827"},
+ {name:"Prestígio",desc:"Chocolate com recheio de coco.",top:"#4a2119",layer:"#fff4e5",middle:"#7b3d2b"},
+ {name:"Chocolate com maracujá",desc:"Chocolate com recheio cremoso de maracujá.",top:"#f4a51c",layer:"#f7cf64",middle:"#512318"},
+ {name:"Beijinho",desc:"Massa com recheio cremoso de coco.",top:"#fff4e5",layer:"#f6e2c8",middle:"#e9cda9"},
+ {name:"Morango com brigadeiro",desc:"Brigadeiro de chocolate com pedaços de morango.",top:"#552117",layer:"#bd4d3e",middle:"#3a1814"},
+ {name:"Morango com beijinho",desc:"Recheio de beijinho com pedaços de morango.",top:"#fff2e5",layer:"#f3c5b9",middle:"#fff8e9"}
+];
+const quantities = Array(flavors.length).fill(0);
+const money = n => n.toLocaleString("pt-BR",{style:"currency",currency:"BRL"});
+const products = document.getElementById("products");
+flavors.forEach((flavor,i)=>{
+ const card=document.createElement("article");
+ card.className="product";
+ card.innerHTML=`<div class="product-image"><div class="food-cup" style="--top:${flavor.top};--layer:${flavor.layer};--middle:${flavor.middle}"></div></div>
+ <h3>${flavor.name}</h3><p>${flavor.desc}</p><div class="product-bottom"><span class="unit-price">R$ 8,00 <small style="font-weight:500;color:#846d66">/ un.</small></span>
+ <div class="quantity" aria-label="Quantidade de ${flavor.name}"><button type="button" data-action="minus" aria-label="Diminuir ${flavor.name}">−</button><output id="qty-${i}" aria-live="polite">0</output><button type="button" data-action="plus" aria-label="Aumentar ${flavor.name}">+</button></div></div>`;
+ card.querySelectorAll("button").forEach(btn=>btn.addEventListener("click",()=>{
+   quantities[i]=Math.max(0,quantities[i]+(btn.dataset.action==="plus"?1:-1));
+   document.getElementById(`qty-${i}`).textContent=quantities[i];
+   updateTotals();
+ }));
+ products.appendChild(card);
+});
+function updateTotals(){
+ const count=quantities.reduce((a,b)=>a+b,0);
+ document.getElementById("totalItemsLabel").textContent=`${count} ${count===1?"bolo selecionado":"bolos selecionados"}`;
+ document.getElementById("totalPrice").textContent=money(count*PRICE);
+}
+function toast(message){const el=document.getElementById("toast");el.textContent=message;el.style.display="block";clearTimeout(window.toastTimer);window.toastTimer=setTimeout(()=>el.style.display="none",3200)}
+document.getElementById("whatsappButton").addEventListener("click",()=>{
+ const selected=flavors.map((f,i)=>({name:f.name,qty:quantities[i]})).filter(x=>x.qty>0);
+ if(!selected.length){toast("Escolha pelo menos um sabor antes de continuar.");document.getElementById("sabores").scrollIntoView({behavior:"smooth"});return}
+ const count=selected.reduce((sum,x)=>sum+x.qty,0);
+ const total=count*PRICE;
+ const name=document.getElementById("customerName").value.trim();
+ let message="Olá, Maysa! Gostaria de fazer um pedido:\n\n";
+ selected.forEach(item=>{message+=`- ${item.qty} × ${item.name} — ${money(item.qty*PRICE)}\n`});
+ message+=`\nQuantidade total: ${count} ${count===1?"bolo de pote":"bolos de pote"}\nValor total: ${money(total)}`;
+ if(name) message+=`\n\nMeu nome é: ${name}`;
+ message+="\n\nObrigado(a)!";
+ const destination = window.maysaPhone ? window.maysaPhone() : WHATSAPP;
+ const url=`https://wa.me/${destination}?text=${encodeURIComponent(message)}`;
+ window.open(url,"_blank","noopener,noreferrer");
+});
+</script>
+
+<script>
+(() => {
+  "use strict";
+  const entryScreen=document.getElementById("entryScreen");
+  const clientArea=document.getElementById("clientArea");
+  const ownerArea=document.getElementById("proprietario");
+  document.getElementById("topSettings").style.display="none";
+  function showArea(area){
+    entryScreen.classList.toggle("entry-hidden",area!=="home");
+    clientArea.classList.toggle("entry-hidden",area!=="client");
+    ownerArea.classList.toggle("entry-hidden",area!=="owner");
+    document.getElementById("headerOrderButton").style.display=area==="client"?"inline-flex":"none";
+    document.getElementById("topSettings").style.display=area==="owner"?"flex":"none";
+    document.getElementById("settingsPopover").classList.remove("open");
+    window.scrollTo({top:0,behavior:"smooth"});
+  }
+  let currentClientName="";
+  document.getElementById("clientEntryForm").addEventListener("submit",event=>{
+    event.preventDefault(); currentClientName=document.getElementById("clientEntryName").value.trim();
+    if(!currentClientName) return;
+    document.getElementById("clientWelcome").textContent="Olá, "+currentClientName+"!";
+    document.getElementById("reviewName").value=currentClientName;
+    document.getElementById("customerName").value=currentClientName;
+    showArea("client");
+  });
+  document.getElementById("enterOwner").addEventListener("click",()=>showArea("owner"));
+  document.getElementById("clientLogout").addEventListener("click",()=>{currentClientName="";document.getElementById("clientEntryForm").reset();showArea("home");});
+  document.getElementById("backFromOwner").addEventListener("click",()=>showArea("home"));
+  document.getElementById("settingsTrigger").addEventListener("click",()=>document.getElementById("settingsPopover").classList.toggle("open"));
+  document.getElementById("goOwnerSettings").addEventListener("click",()=>{
+    document.getElementById("settingsPopover").classList.remove("open");
+    showArea("owner");
+    if(isLoggedIn){
+      document.querySelectorAll("[data-tab]").forEach(b=>b.classList.toggle("active",b.dataset.tab==="settingsTab"));
+      document.querySelectorAll(".admin-tab").forEach(t=>t.classList.toggle("active",t.id==="settingsTab"));
+      document.getElementById("adminPanel").scrollIntoView({behavior:"smooth",block:"start"});
+    } else {
+      document.getElementById("adminLogin").scrollIntoView({behavior:"smooth",block:"center"});
+    }
+  });
+  document.getElementById("togglePassword").addEventListener("click",()=>{
+    const input=document.getElementById("adminPassword"), button=document.getElementById("togglePassword");
+    input.type=input.type==="password"?"text":"password";
+    button.textContent=input.type==="password"?"👁":"🙈";
+    button.setAttribute("aria-label",input.type==="password"?"Mostrar senha":"Ocultar senha");
+  });
+  const STORE = {
+    orders:"maysa_v1_orders", reviews:"maysa_v1_reviews", photos:"maysa_v1_photos",
+    phone:"maysa_v1_phone", pass:"maysa_v1_passhash"
+  };
+  const INITIAL_PASSWORD_HASH = "52d5cb44da58daf9a592b077b6e1bce2b1d03c9eb52000724431610ac67f45dd";
+  const get = (key, fallback) => { try { const value=localStorage.getItem(key); return value===null?fallback:JSON.parse(value); } catch { return fallback; } };
+  const set = (key, value) => localStorage.setItem(key, JSON.stringify(value));
+  const safe = value => String(value ?? "").replace(/[&<>"']/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
+  const moneyFmt = n => Number(n||0).toLocaleString("pt-BR",{style:"currency",currency:"BRL"});
+  const hash = async text => {
+    const bytes = new TextEncoder().encode(text);
+    const digest = await crypto.subtle.digest("SHA-256", bytes);
+    return Array.from(new Uint8Array(digest)).map(b=>b.toString(16).padStart(2,"0")).join("");
+  };
+  const dateKey = date => `${date.getFullYear()}-${String(date.getMonth()+1).padStart(2,"0")}`;
+  const firstName = name => String(name||"Cliente").trim().split(/\s+/)[0] || "Cliente";
+  let isLoggedIn = false;
+  const orders = () => get(STORE.orders,[]);
+  const reviews = () => get(STORE.reviews,[]);
+  const photos = () => get(STORE.photos,[]);
+  const getPhone = () => localStorage.getItem(STORE.phone) || "5575982801046";
+  const toastMsg = message => { if (typeof toast === "function") toast(message); else alert(message); };
+  const defaultMonth = document.getElementById("monthPicker");
+  if(defaultMonth) defaultMonth.value=dateKey(new Date());
+  if(!localStorage.getItem(STORE.pass)) localStorage.setItem(STORE.pass,INITIAL_PASSWORD_HASH);
+
+  // Registra o pedido no navegador antes do manipulador que abre o WhatsApp.
+  document.getElementById("whatsappButton").addEventListener("click", () => {
+    const selected = flavors.map((f,i)=>({name:f.name,qty:quantities[i]})).filter(x=>x.qty>0);
+    if(!selected.length) return;
+    const count = selected.reduce((sum,item)=>sum+item.qty,0);
+    const order = {id:(crypto.randomUUID?crypto.randomUUID():String(Date.now())),createdAt:new Date().toISOString(),
+      customer:document.getElementById("customerName").value.trim() || "Não informado",
+      items:selected,total:count*PRICE,count,status:"enviado ao WhatsApp"};
+    const all=orders(); all.push(order); set(STORE.orders,all);
+    if(isLoggedIn) refreshDashboard();
+  }, true);
+
+  document.getElementById("reviewForm").addEventListener("submit", event => {
+    event.preventDefault();
+    const name=currentClientName || document.getElementById("reviewName").value.trim();
+    const comment=document.getElementById("reviewComment").value.trim();
+    if(!name) { toastMsg("Entre na área do cliente com seu nome antes de avaliar."); return; }
+    const list=reviews(); list.push({id:Date.now(),name,rating:Number(document.getElementById("reviewRating").value),comment,createdAt:new Date().toISOString(),status:"pending"});
+    set(STORE.reviews,list); event.target.reset(); toastMsg("Avaliação enviada! Ela aparecerá após a aprovação da Maysa.");
+  });
+
+  function renderPublicReviews(){
+    const target=document.getElementById("publicReviews"), approved=reviews().filter(r=>r.status==="approved");
+    if(!approved.length){target.innerHTML='<div class="panel-card"><p class="small-note">Ainda não há avaliações publicadas. Seja a primeira pessoa a avaliar!</p></div>';return;}
+    target.innerHTML=approved.map(r=>`<article class="review-card"><div class="review-stars" aria-label="${r.rating} de 5 estrelas">${"★".repeat(r.rating)}${"☆".repeat(5-r.rating)}</div><h3>${safe(r.name)}</h3>${r.comment?`<p>${safe(r.comment)}</p>`:""}<p class="small-note">${new Date(r.createdAt).toLocaleDateString("pt-BR")}</p></article>`).join("");
+  }
+  function renderPublicPhotos(){
+    const target=document.getElementById("publicGallery"), items=photos();
+    if(!target.dataset.defaults) target.dataset.defaults=target.innerHTML;
+    target.innerHTML=items.length ? items.map(p=>`<article class="gallery-card"><img src="${p.data}" alt="${safe(p.title)}"><h3>${safe(p.title)}</h3></article>`).join("")+target.dataset.defaults : target.dataset.defaults;
+  }
+  function refreshDashboard(){
+    const all=orders(), month=defaultMonth.value || dateKey(new Date()), filtered=all.filter(o=>dateKey(new Date(o.createdAt))===month);
+    const count=filtered.reduce((s,o)=>s+o.count,0), revenue=filtered.reduce((s,o)=>s+o.total,0);
+    document.getElementById("statOrders").textContent=all.length;
+    document.getElementById("statCakes").textContent=all.reduce((s,o)=>s+o.count,0);
+    document.getElementById("statRevenue").textContent=moneyFmt(all.reduce((s,o)=>s+o.total,0));
+    document.getElementById("monthOrders").textContent=filtered.length;
+    document.getElementById("monthCakes").textContent=count;
+    document.getElementById("monthRevenue").textContent=moneyFmt(revenue);
+    const tbody=document.getElementById("ordersTable");
+    tbody.innerHTML=filtered.length?filtered.slice().reverse().map(o=>`<tr><td>${new Date(o.createdAt).toLocaleString("pt-BR")}</td><td>${safe(o.customer)}</td><td>${o.items.map(i=>`${i.qty} × ${safe(i.name)}`).join("<br>")}</td><td>${moneyFmt(o.total)}</td></tr>`).join(""):'<tr><td colspan="4">Nenhum pedido registrado neste mês.</td></tr>';
+    renderAdminReviews(); renderAdminPhotos();
+    document.getElementById("settingsPhone").value=getPhone();
+  }
+  function renderAdminReviews(){
+    const all=reviews(), pending=all.filter(r=>r.status==="pending"), approved=all.filter(r=>r.status==="approved");
+    const card=(r,buttons)=>`<article class="review-card"><div class="review-stars">${"★".repeat(r.rating)}${"☆".repeat(5-r.rating)}</div><h3>${safe(r.name)}</h3><p>${safe(r.comment)}</p><p class="small-note">${new Date(r.createdAt).toLocaleString("pt-BR")}</p><div class="item-actions">${buttons}</div></article>`;
+    document.getElementById("pendingReviews").innerHTML=pending.length?pending.map(r=>card(r,`<button type="button" class="approve" data-review-action="approve" data-id="${r.id}">Aprovar</button><button type="button" data-review-action="reject" data-id="${r.id}">Rejeitar</button><button type="button" data-review-action="delete" data-id="${r.id}">Excluir</button>`)).join(""):'<p class="small-note">Nenhuma avaliação pendente.</p>';
+    document.getElementById("approvedReviewsAdmin").innerHTML=approved.length?approved.map(r=>card(r,`<button type="button" data-review-action="reject" data-id="${r.id}">Retirar publicação</button><button type="button" data-review-action="delete" data-id="${r.id}">Excluir</button>`)).join(""):'<p class="small-note">Nenhuma avaliação publicada.</p>';
+    document.querySelectorAll("[data-review-action]").forEach(btn=>btn.addEventListener("click",()=>{
+      const list=reviews(), item=list.find(r=>String(r.id)===btn.dataset.id); if(!item)return;
+      if(btn.dataset.reviewAction==="approve") item.status="approved";
+      else if(btn.dataset.reviewAction==="reject") item.status="rejected";
+      else if(btn.dataset.reviewAction==="delete" && !confirm("Deseja excluir esta avaliação permanentemente?")) return;
+      else if(btn.dataset.reviewAction==="delete"){set(STORE.reviews,list.filter(r=>String(r.id)!==btn.dataset.id));renderPublicReviews();renderAdminReviews();return;}
+      set(STORE.reviews,list); renderPublicReviews(); renderAdminReviews();
+    }));
+  }
+  function renderAdminPhotos(){
+    const target=document.getElementById("adminGallery"), list=photos();
+    target.innerHTML=list.map(p=>`<article class="gallery-card"><img src="${p.data}" alt="${safe(p.title)}"><h3>${safe(p.title)}</h3><div class="item-actions"><button type="button" data-photo-delete="${p.id}">Apagar foto</button></div></article>`).join("") || '<p class="small-note">Nenhuma foto enviada ainda.</p>';
+    target.querySelectorAll("[data-photo-delete]").forEach(btn=>btn.addEventListener("click",()=>{if(confirm("Apagar esta foto?")){set(STORE.photos,photos().filter(p=>String(p.id)!==btn.dataset.photoDelete));renderAdminPhotos();renderPublicPhotos();}}));
+  }
+  document.getElementById("adminLogin").addEventListener("submit", async event=>{
+    event.preventDefault();
+    const entered=document.getElementById("adminPassword").value, expected=localStorage.getItem(STORE.pass)||INITIAL_PASSWORD_HASH;
+    if(await hash(entered)!==expected){document.getElementById("loginError").textContent="Erro: senha incorreta";return;}
+    isLoggedIn=true; document.getElementById("loginError").textContent=""; document.getElementById("adminPassword").value="";
+    document.getElementById("adminLogin").style.display="none"; document.getElementById("adminPanel").classList.add("active"); refreshDashboard();
+  });
+  document.getElementById("logoutButton").addEventListener("click",()=>{isLoggedIn=false;document.getElementById("adminPanel").classList.remove("active");document.getElementById("adminLogin").style.display="block";document.getElementById("adminPassword").type="password";document.getElementById("togglePassword").textContent="👁";});
+  document.querySelectorAll("[data-tab]").forEach(btn=>btn.addEventListener("click",()=>{
+    document.querySelectorAll("[data-tab]").forEach(b=>b.classList.toggle("active",b===btn));
+    document.querySelectorAll(".admin-tab").forEach(tab=>tab.classList.toggle("active",tab.id===btn.dataset.tab));
+  }));
+  document.getElementById("refreshMonth").addEventListener("click",refreshDashboard);
+  defaultMonth.addEventListener("change",refreshDashboard);
+  document.getElementById("settingsForm").addEventListener("submit",event=>{
+    event.preventDefault(); const phone=document.getElementById("settingsPhone").value.replace(/\D/g,"");
+    if(phone.length<12||phone.length>15){toastMsg("Informe o número com código do país, DDD e telefone.");return;}
+    localStorage.setItem(STORE.phone,phone); toastMsg("Telefone salvo neste navegador.");
+  });
+  document.getElementById("changePasswordForm").addEventListener("submit",async event=>{
+    event.preventDefault();
+    const current=document.getElementById("currentPassword").value, next=document.getElementById("newPassword").value, confirmPass=document.getElementById("confirmPassword").value;
+    if(await hash(current)!==(localStorage.getItem(STORE.pass)||INITIAL_PASSWORD_HASH)){toastMsg("Senha atual incorreta.");return;}
+    if(next.length<10){toastMsg("A nova senha precisa ter pelo menos 10 caracteres.");return;}
+    if(next!==confirmPass){toastMsg("A confirmação da nova senha não confere.");return;}
+    localStorage.setItem(STORE.pass,await hash(next));event.target.reset();toastMsg("Senha alterada neste navegador.");
+  });
+  document.getElementById("photoForm").addEventListener("submit",event=>{
+    event.preventDefault(); const file=document.getElementById("photoFile").files[0], title=document.getElementById("photoTitle").value.trim();
+    if(!file||!title)return;
+    if(!file.type.startsWith("image/")){toastMsg("Escolha um arquivo de imagem.");return;}
+    if(file.size>1_500_000){toastMsg("A foto precisa ter até 1,5 MB nesta versão.");return;}
+    const reader=new FileReader(); reader.onload=()=>{const list=photos();list.push({id:Date.now(),title,data:reader.result});try{set(STORE.photos,list);event.target.reset();renderAdminPhotos();renderPublicPhotos();toastMsg("Foto publicada neste navegador.");}catch{toastMsg("Não foi possível salvar. Tente uma imagem menor.");}};reader.readAsDataURL(file);
+  });
+  window.maysaPhone = getPhone;
+  renderPublicReviews();
+  renderPublicPhotos();
+})();
+</script>
+
+</body>
+</html>
